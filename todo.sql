@@ -1,0 +1,23 @@
+INSERT INTO todo (title, details, priority, created_at) VALUES ('Wash', 'Wash before 2pm',4,'2017-08-08 04:20:01');
+SELECT * FROM todo;
+INSERT INTO todo (title, details, priority, created_at) VALUES ('Workout', 'Workout for 2 hours a day',7,'2017-08-08 04:29:01'),('Study', 'Start homework by 6pm',2,'2017-08-08 04:30:01'),('Call', 'Call my mom',3,'2017-08-08 04:30:01');
+SELECT * FROM todo;
+SELECT * FROM todo;
+INSERT INTO todo (title, details, priority, created_at, completed_at ) VALUES ('Smile', 'Be happy',2,'2017-08-08 04:35:01','2017-08-08 04:40:00');
+SELECT * FROM todo;
+SELECT title FROM todo WHERE completed_at IS NULL;
+SELECT title FROM todo ORDER BY priority DESC LIMIT 6;
+SELECT * FROM todo;
+UPDATE todo  SET  completed_at = '2017-08-08 06:35:01' WHERE id = '197';
+DELETE FROM todo WHERE completed_at  IS NOT NULL;
+SELECT * FROM todo;
+
+INSERT INTO todo (title, details, priority, created_at, completed_at ) VALUES ('breakup', 'Be single',20,'2017-08-09 10:00:01','2017-08-09 010:50:00'),('dance', 'Have fun',19,'2017-08-09 10:03:01','2017-08-09 011:00:00'),('yell', 'let it out',18,'2017-08-09 10:05:01','2017-08-09 012:00:00'),('nap', 'take a nap',17,'2017-08-09 10:06:01','2017-08-09  01:50:00');
+SELECT * FROM todo;
+INSERT INTO todo (title, details, priority, created_at) VALUES ('pray', 'pray',5,'2017-08-09 010:35:01'),('eat', 'eat good',6,'2017-08-09 10:36:01'),('bath', 'please shower',8,'2017-08-09 10:37:01'),('music', 'listen to trey',9,'2017-08-09 10:40:01'),('bestie', 'Call britt britt',10,'2017-08-09 01:20:01'),('swim', 'float',11,'2017-08-09 01:35:01'),('phone', 'get a new phone',12,'2017-08-09  01:40:01'),('teeth', 'brush my teeth',13,'2017-08-09 01:50:01'),('hair', 'do my hair',14,'2017-08-09 02:00:01'),('nails', 'do nails',15,'2017-08-09 02:10:01'),('buy', 'go shopping',16,'2017-08-09 02:35:01'),('lashes', 'go to last bar',21,'2017-08-09 05:00:0'),('drink', 'have a drink',22,'2017-08-09 05:45:00'),('Meds', 'take meds',23,'2017-08-09 06:00:00'),('travel', 'go to Africa',24,'2017-08-09 07:00:00'),('bathroom', 'got to go',25,'2017-08-09 08:35:00');
+SELECT * FROM todo;
+Select * FROM todo WHERE priority =3 AND completed_at IS NULL;
+SELECT Count(*), priority FROM todo WHERE completed_at IS NULL GROUP BY priority;
+SELECT * FROM todo;
+SELECT COUNT(id), priority FROM todo WHERE created_at > current_date - INTERVAL '30' DAY GROUP BY priority;
+SELECT title, created_at FROM todo WHERE completed_at IS NULL ORDER BY created_at;
